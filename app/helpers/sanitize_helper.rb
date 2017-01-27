@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module SanitizeHelper
   def sanitization_filter(allowed_elements = elements)
     {

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class HTMLWithPygments < Redcarpet::Render::HTML
   include Rouge::Plugins::Redcarpet
   include ActionView::Helpers::FormHelper

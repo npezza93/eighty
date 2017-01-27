@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module ApplicationHelper
   def embedded_svg(filename, options = {})
     assets = Rails.application.assets
