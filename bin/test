@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+require "pathname"
+require "fileutils"
+include FileUtils
+
+# path to your application root.
+APP_ROOT = Pathname.new File.expand_path("../../", __FILE__)
+
+def system!(*args)
+  system(*args) || abort("\n== Command #{args} failed ==")
+end
+
+chdir APP_ROOT do
+  system! "rails test"
+
+  puts "\nChecking rubocop\n"
+  system! "bundle exec rubocop"
+
+  puts "\nChecking your haml\n"
+  system! "bundle exec haml-lint app/views"
+end

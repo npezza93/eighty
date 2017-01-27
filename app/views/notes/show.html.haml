@@ -1,0 +1,6 @@
+= link_to edit_note_path(@note), class: "toggle-preview" do
+  %i.material-icons mode_edit
+
+.js-task-list-container#note
+  = markdown @note
+  = render "form", note: @note, hidden: true

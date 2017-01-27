@@ -1,0 +1,59 @@
+#hamburger
+  position: fixed
+  top: 30px
+  left: 15px
+  display: none
+  z-index: 10
+  cursor: pointer
+  @media only screen and (max-width: 800px)
+    display: block
+#drawer
+  position: fixed
+  top: 0
+  left: 0
+  height: 100%
+  width: 250px
+  max-width: 100%
+  border-right: 1px solid #DEDEDE
+  transition: all .35s ease
+  @media only screen and (max-width: 800px)
+    left: -250px
+  img
+    max-width: 75%
+    filter: grayscale(100%)
+    display: block
+    margin: auto
+  a
+    display: block
+    text-decoration: none
+    color: #757575
+    border-bottom: 1px solid #DEDEDE
+    padding: 10px
+  .new_note_link_container
+    display: flex
+    flex-direction: row
+    justify-content: flex-end
+    .new_note_link
+      text-decoration: none
+      color: #212121
+      padding-top: 10px
+      padding-right: 10px
+#main
+  position: absolute
+  top: 0
+  left: 250px
+  height: 100%
+  width: calc(100% - 250px)
+  transition: all .35s ease
+  @media only screen and (max-width: 800px)
+    left: 0px
+    width: 100%
+  .logo-container
+    display: flex
+    align-items: center
+    flex-direction: column
+    justify-content: center
+    height: 100%
+    img
+      max-width: 90%
+      max-height: 70vh

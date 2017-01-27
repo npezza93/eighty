@@ -1,0 +1,11 @@
+unordered_task_list:
+  content: "- [ ] Task 1\n- [ ] Task 2"
+
+ordered_task_list:
+  content: "1. [ ] Task 1\n1. [ ] Task 2"
+
+completed_unordered_task_list:
+  content: "- [x] Task 1"
+
+regular_unordered_list:
+  content: "- Item 1"

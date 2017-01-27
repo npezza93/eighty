@@ -1,0 +1,8 @@
+= link_to note_path(@note), class: "toggle-preview" do
+  %i.material-icons remove_red_eye
+
+= render "form", note: @note
+
+= form_for Image.new, html: { multipart: true, class: "hide" } do |f|
+  = f.file_field :image, multiple: true, name: "image[image]"
+  = f.submit

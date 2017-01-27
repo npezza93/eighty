@@ -1,0 +1,36 @@
+!!!
+%html
+  %head
+    %title Eighty
+    = csrf_meta_tags
+    = favicon_link_tag "logo.png"
+    %link{ href: image_url("logo.png"), rel: "apple-touch-icon" }/
+    %meta{ content: "yes", name: "mobile-web-app-capable" }/
+    %meta{ content: "yes", name: "apple-mobile-web-app-capable" }/
+    %meta{ content: "minimal-ui, width=device-width,
+      height=device-height, initial-scale=1.0, maximum-scale=1.0",
+      name: "viewport" }/
+
+    %link{ href: "https://fonts.googleapis.com/css?family=Droid+Sans+Mono",
+           rel: "stylesheet" }
+    %link{ href: "https://fonts.googleapis.com/css?family=Muli:200,300,400",
+           rel: "stylesheet" }
+    %link{ href: "https://fonts.googleapis.com/icon?family=Material+Icons",
+           rel: "stylesheet" }
+
+    = stylesheet_link_tag "application", media: "all",
+        "data-turbolinks-track": "reload"
+    = javascript_include_tag "application", "data-turbolinks-track": "reload"
+  %body
+    #hamburger
+      %i.material-icons menu
+    #drawer
+      .new_note_link_container
+        = link_to notes_path, method: :post, class: "new_note_link" do
+          %i.material-icons add
+      - Note.find_each do |note|
+        = link_to note do
+          = truncate_html standard_markdown(note), length: 30, omission: ""
+
+    #main
+      = yield
