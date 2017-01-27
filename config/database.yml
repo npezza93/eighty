@@ -5,12 +5,12 @@ default: &default
 
 development:
   <<: *default
-  database: db/dev_eighty
+  database: dev_eighty
 
 test:
   <<: *default
-  database: db/test_eighty
+  database: test_eighty
 
 production:
   <<: *default
-  database: db/prod_eighty
+  database: prod_eighty
