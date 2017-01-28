@@ -17,7 +17,7 @@ function createWindow () {
     titleBarStyle: 'hidden',
     icon: __dirname+'/app/assets/images/rounded-logo.png',
     webPreferences: {
-      nodeIntegration: false,
+      nodeIntegration: false
     }
   });
 
