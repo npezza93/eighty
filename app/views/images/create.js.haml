@@ -1,9 +1,0 @@
-- unless @image.new_record?
-  :plain
-    $("textarea").trigger("focus");
-    var alt = "\n\n![#{@image.image.file.filename}]";
-    var image =
-      "(#{@image.image_url} '#{@image.image.file.filename.titleize}')\n";
-
-    $("textarea").val($("textarea").val() + alt + image);
-    $("textarea.expand").trigger("focus").trigger("input");

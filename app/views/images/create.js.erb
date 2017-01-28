@@ -1,0 +1,8 @@
+<% unless @image.new_record? %>
+  $("textarea").trigger("focus");
+  var alt = "\n\n![<%= @image.image.file.filename %>]";
+  var image = "(<%= @image.image_url %>)\n";
+
+  $("textarea").val($("textarea").val() + alt + image);
+  $("textarea.expand").trigger("focus").trigger("input");
+<% end %>
