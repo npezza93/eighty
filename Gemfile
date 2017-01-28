@@ -29,6 +29,7 @@ gem "truncate_html"
 
 group :test do
   gem "simplecov", require: false
+  gem "codeclimate-test-reporter"
 end
 
 group :development, :test do
