@@ -1,5 +1,8 @@
-= link_to edit_note_path(@note), class: "toggle-preview" do
-  %i.material-icons mode_edit
+- content_for :nav do
+  = link_to @note, method: :delete do
+    %i.material-icons clear
+  = link_to edit_note_path(@note), class: "toggle-preview" do
+    %i.material-icons mode_edit
 
 .js-task-list-container#note
   = markdown @note

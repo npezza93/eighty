@@ -18,8 +18,10 @@
         media: "all", "data-turbolinks-track": "reload"
     = javascript_include_tag "application", "data-turbolinks-track": "reload"
   %body
-    #hamburger
-      %i.material-icons menu
+    %nav
+      %i#hamburger.material-icons menu
+      .flex
+      = yield(:nav)
 
     = render "layouts/drawer"
     #main= yield
