@@ -4,6 +4,9 @@ rvm:
 install:
   - gem install rainbow -v '2.2.1'
   - bundle install
+before_script:
+  - RAILS_ENV=test bundle exec rake --trace db:create test
 script:
+  - RAILS_ENV=test bundle exec rake --trace db:migrate test
   - bin/test
   - codeclimate-test-reporter
