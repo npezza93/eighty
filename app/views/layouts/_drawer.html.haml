@@ -2,15 +2,16 @@
   .new_note_search_container
     = form_tag notes_url, method: :get, class: "flex" do
       = text_field_tag :search, params[:search], placeholder: "Search"
+
     = link_to notes_path, method: :post, class: "new_note_link" do
       %i.material-icons add
+
   - notes.each do |note|
     = link_to note_path(note, search: params[:search]),
         class: "truncated-note #{active_note(note, params)}" do
-      .time_ago
-        = time_ago_in_words note.updated_at, include_seconds: true
+      .time_ago= time_ago_in_words note.updated_at, include_seconds: true
       .note
         - if note.content.blank?
           %p.temp_note This is a new note that is waiting to be written
         - else
-          = truncate_html standard_markdown(note), length: 60, omission: ""
+          = truncate_html standard_markdown(note), length: 90, omission: ""
