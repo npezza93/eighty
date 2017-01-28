@@ -13,20 +13,22 @@ $(document).on("turbolinks:load", () => {
     }
     rows = Math.ceil((this.scrollHeight - this.baseScrollHeight) / 24);
     this.rows = minRows + rows;
-    $(this).closest("form").submit();
   });
 
   function preview(e) {
     let evtobj = window.event? event : e
     if (evtobj.keyCode == 80 && evtobj.ctrlKey) {
-      $("#edit_note").submit();
       Turbolinks.visit($(".toggle-preview").attr("href"));
     }
   }
 
   document.onkeydown = preview;
   $("textarea.expand").trigger("input");
-
+  $(".edit_note textarea").autosave({
+    url: $(".edit_note").attr("action"),
+    method: "PUT",
+    type: "script"
+  });
   $('.js-task-list-container').taskList();
   return null;
 });

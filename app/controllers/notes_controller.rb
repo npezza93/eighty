@@ -39,6 +39,6 @@ class NotesController < ApplicationController
   end
 
   def note_params
-    params.require(:note).permit(:content)
+    { content: params[:value] }
   end
 end
