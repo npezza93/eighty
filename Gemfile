@@ -28,8 +28,8 @@ gem "sanitize"
 gem "truncate_html"
 
 group :test do
-  gem "simplecov", require: false
   gem "codeclimate-test-reporter"
+  gem "simplecov", require: false
 end
 
 group :development, :test do
