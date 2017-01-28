@@ -1,3 +1,4 @@
+// Credit to GitHub for this
 let codeFencesPattern;
 let complete;
 let completePattern;
