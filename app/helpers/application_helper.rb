@@ -8,4 +8,10 @@ module ApplicationHelper
     svg["class"] = options[:class] if options[:class].present?
     raw doc
   end
+
+  def active_note(note, params)
+    return if params[:id].blank?
+
+    "active" if note.id == params[:id].to_i
+  end
 end

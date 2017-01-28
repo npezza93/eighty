@@ -21,15 +21,5 @@
     #hamburger
       %i.material-icons menu
 
-    #drawer
-      .new_note_link_container
-        = link_to notes_path, method: :post, class: "new_note_link" do
-          %i.material-icons add
-      - Note.find_each do |note|
-        = link_to note, class: "truncated-note" do
-          - if note.content.blank?
-            This is a new note that is waiting to be written
-          - else
-            = truncate_html standard_markdown(note), length: 60, omission: ""
-
+    = render "layouts/drawer"
     #main= yield
