@@ -25,28 +25,37 @@ module SanitizeHelper
   end
 
   def attributes
-    { a: %w(href), img: %w(src longdesc), div: %w(itemscope itemtype),
-      blockquote: %w(cite), del: %w(cite), ins: %w(cite), q: %w(cite),
-      all: %w(abbr accept accept-charset accesskey action align alt axis border
-              cellpadding cellspacing charoff checked clear cols colspan color
-              coords dir disabled enctype for frame headers height hreflang
-              ismap label lang maxlength media method multiple name nohref
-              nowrap open prompt readonly rel rev rows rowspan rules scope
-              shape size span start summary tabindex target title type usemap
-              value vspace width itemprop charset datetime class char valign
-              compact hspace noshade selected) }
+    {
+      "a"          => %w(href),
+      "img"        => %w(src longdesc),
+      "div"        => %w(itemscope itemtype),
+      "blockquote" => %w(cite),
+      "del"        => %w(cite),
+      "ins"        => %w(cite),
+      "q"          => %w(cite),
+      all:         default_permitted_attributes
+    }
+  end
+
+  def default_permitted_attributes
+    %w(abbr accept accept-charset accesskey action align alt axis border
+       cellpadding cellspacing charoff checked clear cols colspan color
+       coords dir disabled enctype for frame headers height hreflang
+       ismap label lang maxlength media method multiple name nohref
+       nowrap open prompt readonly rel rev rows rowspan rules scope
+       shape size span start summary tabindex target title type usemap
+       value vspace width itemprop charset datetime class char valign
+       compact hspace noshade selected)
   end
 
   def protocols
-    { "a"          => {"href" => anchor_schemes},
+    {
+      "a"          => {"href" => anchor_schemes},
       "blockquote" => {"cite" => ["http", "https", :relative]},
       "del"        => {"cite" => ["http", "https", :relative]},
       "ins"        => {"cite" => ["http", "https", :relative]},
       "q"          => {"cite" => ["http", "https", :relative]},
-      "img"        => {
-        "src"      => ["http", "https", :relative],
-        "longdesc" => ["http", "https", :relative]
-      } }
+    }
   end
 
   def table_transformer
