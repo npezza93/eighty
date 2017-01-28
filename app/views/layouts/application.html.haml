@@ -11,26 +11,25 @@
       height=device-height, initial-scale=1.0, maximum-scale=1.0",
       name: "viewport" }/
 
-    %link{ href: "https://fonts.googleapis.com/css?family=Droid+Sans+Mono",
-           rel: "stylesheet" }
-    %link{ href: "https://fonts.googleapis.com/css?family=Muli:200,300,400",
-           rel: "stylesheet" }
-    %link{ href: "https://fonts.googleapis.com/icon?family=Material+Icons",
-           rel: "stylesheet" }
-
-    = stylesheet_link_tag "application", media: "all",
-        "data-turbolinks-track": "reload"
+    = stylesheet_link_tag "application",
+        "https://fonts.googleapis.com/css?family=Droid+Sans+Mono",
+        "https://fonts.googleapis.com/css?family=Muli:200,300,400",
+        "https://fonts.googleapis.com/icon?family=Material+Icons",
+        media: "all", "data-turbolinks-track": "reload"
     = javascript_include_tag "application", "data-turbolinks-track": "reload"
   %body
     #hamburger
       %i.material-icons menu
+
     #drawer
       .new_note_link_container
         = link_to notes_path, method: :post, class: "new_note_link" do
           %i.material-icons add
       - Note.find_each do |note|
-        = link_to note do
-          = truncate_html standard_markdown(note), length: 30, omission: ""
+        = link_to note, class: "truncated-note" do
+          - if note.content.blank?
+            This is a new note that is waiting to be written
+          - else
+            = truncate_html standard_markdown(note), length: 60, omission: ""
 
-    #main
-      = yield
+    #main= yield
