@@ -5,8 +5,9 @@ const url = require("url");
 // Keep a global reference of the window object, if you don"t, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let appIcon = null;
-let tray = null;
-let win = null;
+let tray    = null;
+let win     = null;
+let about   = null;
 
 function createWindow () {
   // Create the browser window.
@@ -24,7 +25,21 @@ function createWindow () {
   var template = [{
     label: "Eighty",
     submenu: [
-      { label: "About Eighty", selector: "orderFrontStandardAboutPanel:" },
+      { label: "About Eighty", click: function() {
+        about = new BrowserWindow({
+          width: 400,
+          height: 765,
+          show: true,
+          titleBarStyle: "hidden",
+          icon: __dirname + "/rounded-logo.png",
+          webPreferences: {
+            nodeIntegration: false
+          }
+        });
+
+        about.loadURL("https://eighty.herokuapp.com/about");
+
+      } },
       { type: "separator" },
       { label: "Quit", accelerator: "Command+Q", click: function() { app.quit(); }}
     ]}, {
