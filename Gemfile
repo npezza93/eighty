@@ -28,6 +28,10 @@ gem "rouge"
 gem "sanitize"
 gem "truncate_html"
 
+group :production do
+  gem "sendgrid-ruby"
+end
+
 group :test do
   gem "codeclimate-test-reporter"
   gem "simplecov", require: false
