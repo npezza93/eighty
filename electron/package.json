@@ -1,5 +1,12 @@
 {
-  "name"    : "eighty",
+  "name"    : "Eighty",
   "version" : "0.1.0",
-  "main"    : "main.js"
+  "main"    : "main.js",
+  "devDependencies": {
+    "electron": "^1.4.1"
+  },
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/npezza93/eighty"
 }
