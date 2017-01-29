@@ -2,8 +2,11 @@
 require "test_helper"
 
 class NotesControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
   setup do
     @note = notes(:unordered_task_list)
+    sign_in users(:one)
   end
 
   test "should get index" do

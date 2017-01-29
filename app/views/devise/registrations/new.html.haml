@@ -1,0 +1,15 @@
+.session-container
+  = image_tag "rounded-logo.png"
+
+  = form_for resource, as: :user, url: user_registration_path do |f|
+    .errors
+      - f.object.errors.full_messages.each do |error|
+        .error= error
+    = f.email_field :email, autofocus: true, placeholder: "Email"
+    = f.password_field :password, autocomplete: "off",
+        placeholder: "Password (6 character minimum)"
+    = f.password_field :password_confirmation, autocomplete: "off",
+        placeholder: "Password confirmation"
+    = f.submit "Sign up"
+
+  .links= render "devise/shared/links"

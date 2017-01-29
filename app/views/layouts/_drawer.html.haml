@@ -15,3 +15,6 @@
           %p.temp_note This is a new note that is waiting to be written
         - else
           = truncate_html standard_markdown(note), length: 90, omission: ""
+  .settings_logout
+    = link_to "Settings", edit_user_registration_path
+    = link_to "Logout", destroy_user_session_path, method: :delete

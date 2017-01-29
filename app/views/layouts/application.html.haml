@@ -22,6 +22,8 @@
       %i.material-icons#hamburger menu
       .flex
       = yield(:nav)
-
-    = render "layouts/drawer"
-    #main= yield
+    - if current_user.present?
+      = render "layouts/drawer"
+      #main= yield
+    - else
+      = yield

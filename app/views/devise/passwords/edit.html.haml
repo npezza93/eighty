@@ -1,0 +1,17 @@
+.session-container
+  = image_tag "rounded-logo.png"
+
+  %h2 Change your password
+  = form_for resource, as: :user, url: user_password_path,
+      html: { method: :put } do |f|
+    = f.hidden_field :reset_password_token
+    .errors
+      - f.object.errors.full_messages.each do |error|
+        .error= error
+    = f.password_field :password, autofocus: true, autocomplete: "off",
+        placeholder: "New Password"
+    = f.password_field :password_confirmation, autocomplete: "off",
+        placeholder: "Confirm new password"
+    = f.submit "Change my password"
+
+  .links= render "devise/shared/links"

@@ -1,0 +1,13 @@
+.session-container
+  = image_tag "rounded-logo.png"
+
+  %h2 Forgot your password?
+  = form_for resource, as: :user, url: user_password_path,
+      html: { method: :post } do |f|
+    .errors
+      - f.object.errors.full_messages.each do |error|
+        .error= error
+    = f.email_field :email, autofocus: true, placeholder: "Email"
+    = f.submit "Send me reset password instructions"
+
+  .links= render "devise/shared/links"

@@ -31,6 +31,8 @@ nav
   max-width: 100%
   border-right: 1px solid #DEDEDE
   transition: all .35s ease
+  overflow-y: scroll
+  margin-bottom: 40px
   @media only screen and (max-width: 800px)
     left: -275px
   img
@@ -71,11 +73,21 @@ nav
       padding-top: 10px
       padding-right: 10px
       padding-bottom: 8px
+  .settings_logout
+    display: flex
+    width: 100%
+    flex-direction: row
+    justify-content: flex-end
+    margin-bottom: 40px
+    a
+      color: #212121
+      text-decoration: none
+      padding: 8px
 #main
   position: absolute
   top: 35px
   left: 276px
-  height: 100%
+  height: calc(100% - 35px)
   width: calc(100% - 276px)
   transition: all .35s ease
   @media only screen and (max-width: 800px)

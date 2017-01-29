@@ -4,6 +4,7 @@ source "https://rubygems.org"
 ruby "2.4.0"
 
 gem "babel-transpiler"
+gem "devise"
 gem "haml-rails"
 gem "pg"
 gem "pry-rails"
@@ -34,6 +35,7 @@ end
 
 group :development, :test do
   gem "haml-lint"
+  gem "letter_opener"
   gem "rubocop"
 end
 
