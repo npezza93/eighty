@@ -6,16 +6,21 @@
 #  content    :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  user_id    :integer
 #
 
 unordered_task_list:
   content: "- [ ] Task 1\n- [ ] Task 2"
+  user: one
 
 ordered_task_list:
   content: "1. [ ] Task 1\n1. [ ] Task 2"
+  user: one
 
 completed_unordered_task_list:
   content: "- [x] Task 1"
+  user: one
 
 regular_unordered_list:
   content: "- Item 1"
+  user: one

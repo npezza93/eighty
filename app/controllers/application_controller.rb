@@ -5,9 +5,9 @@ class ApplicationController < ActionController::Base
 
   def notes
     if params[:search].blank?
-      Note.all
+      current_user.notes
     else
-      Note.where("content LIKE ?", "%#{params[:search]}%")
+      current_user.notes.where("content LIKE ?", "%#{params[:search]}%")
     end.order(updated_at: :desc)
   end
   helper_method :notes

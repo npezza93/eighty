@@ -12,7 +12,7 @@ class NotesController < ApplicationController
   end
 
   def create
-    @note = Note.create
+    @note = current_user.notes.create
 
     redirect_to edit_note_path(@note)
   end
@@ -35,7 +35,7 @@ class NotesController < ApplicationController
   private
 
   def set_note
-    @note = Note.find(params[:id])
+    @note = current_user.notes.find(params[:id])
   end
 
   def note_params

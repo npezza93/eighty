@@ -2,7 +2,7 @@
 AllCops:
   Exclude:
   - vendor/**/*
-  - db/**/*
+  - db/schema.rb
   - Gemfile.lock
   TargetRubyVersion: 2.4
 Lint/AmbiguousOperator:
