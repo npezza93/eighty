@@ -39,6 +39,6 @@ class NotesController < ApplicationController
   end
 
   def note_params
-    { content: params[:value] }
+    { content: params[:value] || params.dig(:note, :content) }
   end
 end
