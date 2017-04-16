@@ -18,6 +18,9 @@ $(document).on("turbolinks:load", () => {
   function preview(e) {
     let evtobj = window.event? event : e
     if (evtobj.keyCode == 80 && evtobj.ctrlKey) {
+      if ($(".toggle-preview").data("edit")) {
+        $("form.edit_note").submit();
+      }
       Turbolinks.visit($(".toggle-preview").attr("href"));
     }
   }

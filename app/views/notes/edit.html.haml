@@ -1,5 +1,5 @@
 - content_for :nav do
-  = link_to note_path(@note), class: "toggle-preview" do
+  = link_to note_path(@note), class: "toggle-preview", data: { edit: true } do
     %i.material-icons remove_red_eye
 
 = render "form", note: @note
