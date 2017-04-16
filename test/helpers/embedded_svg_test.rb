@@ -1,8 +1,10 @@
 # frozen_string_literal: true
+
 require "test_helper"
 
 class EmbeddedSvgTest < ActiveSupport::TestCase
-  include ApplicationHelper, ActionView::Helpers
+  include ApplicationHelper
+  include ActionView::Helpers
 
   test "returns html for embedding svg" do
     svg = embedded_svg("logo.svg")

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
+
 class NotesController < ApplicationController
-  before_action :set_note, only: [:show, :edit, :update, :destroy]
+  before_action :set_note, only: %i[show edit update destroy]
 
   def index
   end

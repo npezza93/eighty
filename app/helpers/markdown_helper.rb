@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module MarkdownHelper
   include SanitizeHelper
 
@@ -14,7 +15,7 @@ module MarkdownHelper
     renderer = Redcarpet::Render::HTML.new(hard_wrap: true, filter_html: true)
 
     Sanitize.fragment(
-      render_markdown(renderer, note), sanitization_filter(elements - %w(hr))
+      render_markdown(renderer, note), sanitization_filter(elements - %w[hr])
     ).html_safe
   end
 
