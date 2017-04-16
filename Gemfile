@@ -38,7 +38,7 @@ group :test do
 end
 
 group :development, :test do
-  gem "haml-lint"
+  gem "haml_lint"
   gem "letter_opener"
   gem "rubocop"
 end
