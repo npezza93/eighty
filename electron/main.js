@@ -86,8 +86,5 @@ app.on("activate", () => {
 })
 
 app.on("ready", () => {
-  appIcon = new Tray(__dirname + "/rounded-logo.png");
-  appIcon.setToolTip("Eighty");
-  appIcon.setPressedImage(__dirname + "/rounded-logo.png");
   createWindow();
 })
