@@ -17,7 +17,7 @@ class HTMLWithPygments < Redcarpet::Render::HTML
   def list_item(text, list_type)
     if text.start_with?("[x]", "[X]", "[ ]")
       task_list_item(text)
-    elsif list_type == :ordered || list_type == :unordered
+    elsif %i(ordered unordered).include?(list_type)
       %(<li>#{text}</li>)
     end
   end
