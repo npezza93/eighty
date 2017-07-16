@@ -1,5 +1,6 @@
 - content_for :nav do
-  = link_to @note, method: :delete do
+  = link_to @note, method: :delete,
+      data: { confirm: "This note will be deleted. Are you sure?" } do
     %i.material-icons clear
   = link_to edit_note_path(@note), class: "toggle-preview" do
     %i.material-icons mode_edit
