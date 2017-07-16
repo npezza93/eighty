@@ -1,8 +1,7 @@
 language: ruby
 rvm:
-  - 2.4.0
+  - 2.4.1
 install:
-  - gem install rainbow -v '2.2.1'
   - bundle install
   - RAILS_ENV=test bundle exec rake db:setup
 script:
