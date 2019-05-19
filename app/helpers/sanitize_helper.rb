@@ -27,14 +27,14 @@ module SanitizeHelper
 
   def attributes
     {
-      "a"          => %w(href),
-      "img"        => %w(src longdesc),
-      "div"        => %w(itemscope itemtype),
+      "a" => %w(href),
+      "img" => %w(src longdesc),
+      "div" => %w(itemscope itemtype),
       "blockquote" => %w(cite),
-      "del"        => %w(cite),
-      "ins"        => %w(cite),
-      "q"          => %w(cite),
-      all:         default_permitted_attributes
+      "del" => %w(cite),
+      "ins" => %w(cite),
+      "q" => %w(cite),
+      all: default_permitted_attributes
     }
   end
 
@@ -51,11 +51,11 @@ module SanitizeHelper
 
   def protocols
     {
-      "a"          => { "href" => anchor_schemes },
+      "a" => { "href" => anchor_schemes },
       "blockquote" => { "cite" => ["http", "https", :relative] },
-      "del"        => { "cite" => ["http", "https", :relative] },
-      "ins"        => { "cite" => ["http", "https", :relative] },
-      "q"          => { "cite" => ["http", "https", :relative] },
+      "del" => { "cite" => ["http", "https", :relative] },
+      "ins" => { "cite" => ["http", "https", :relative] },
+      "q" => { "cite" => ["http", "https", :relative] },
     }
   end
 

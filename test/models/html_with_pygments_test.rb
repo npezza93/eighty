@@ -12,7 +12,8 @@ class HTMLWithPygmentsTest < ActiveSupport::TestCase
                  "<ul class=\"task-list\"><li class=\"task-list-item\"><input "\
                  "type=\"checkbox\" class=\"task-list-item-checkbox\""\
                  " disabled=\"disabled\"><span>"\
-                 "Task 1</span></li><li class=\"task-list-item\"><input type=\"checkbox\""\
+                 "Task 1</span></li><li class=\"task-list-item\"><input "\
+                 "type=\"checkbox\""\
                  " class=\"task-list-item-checkbox\" disabled=\"disabled\">"\
                  "<span>Task 2</span></li></ul>"
   end
@@ -34,10 +35,11 @@ class HTMLWithPygmentsTest < ActiveSupport::TestCase
     markdown = markdown(note)
 
     assert_equal markdown,
-                 "<ul class=\"task-list\"><li class=\"task-list-item checked\"><input "\
+                 "<ul class=\"task-list\"><li class=\"task-list-item "\
+                 "checked\"><input "\
                  "type=\"checkbox\" class=\"task-list-item-checkbox\" "\
-                 "disabled=\"disabled\" checked=\"checked\"><span>Task 1</span>"\
-                 "</li></ul>"
+                 "disabled=\"disabled\" checked=\"checked\"><span>Task 1"\
+                 "</span></li></ul>"
   end
 
   test "regular unordered lists are generated" do
