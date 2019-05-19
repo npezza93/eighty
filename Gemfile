@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-ruby "2.4.1"
+ruby "2.6.3"
 
 gem "babel-transpiler"
 gem "devise"
@@ -10,7 +10,7 @@ gem "haml-rails"
 gem "pg"
 gem "pry-rails"
 gem "puma"
-gem "rails"
+gem "rails", "< 5.2"
 gem "turbolinks", "~> 5"
 
 gem "jquery-rails"

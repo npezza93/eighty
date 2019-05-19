@@ -9,7 +9,7 @@ Eighty is a simple markdown note taking app. Some of its features include GitHub
 
 ##### The Stack
 -   Rails 5.1.2
--   Ruby 2.4.1
+-   Ruby 2.6.3
 -   PostgreSQL Database
 -   Deployed on Heroku
 -   Optional Mac desktop app
