@@ -15,7 +15,7 @@ function createWindow () {
     width: 1050,
     height: 700,
     show: true,
-    titleBarStyle: "hidden",
+    titleBarStyle: "hiddenInset",
     icon: __dirname + "/rounded-logo.png",
     webPreferences: {
       nodeIntegration: false
@@ -30,7 +30,7 @@ function createWindow () {
           width: 400,
           height: 765,
           show: true,
-          titleBarStyle: "hidden",
+          titleBarStyle: "hiddenInset",
           icon: __dirname + "/rounded-logo.png",
           webPreferences: {
             nodeIntegration: false
@@ -52,7 +52,16 @@ function createWindow () {
         { label: "Copy", accelerator: "CmdOrCtrl+C", selector: "copy:" },
         { label: "Paste", accelerator: "CmdOrCtrl+V", selector: "paste:" },
         { label: "Select All", accelerator: "CmdOrCtrl+A", selector: "selectAll:" }
-    ]}
+    ]}, {
+      role: 'window',
+      submenu: [
+        {role: 'close', accelerator: "Cmd+W"},
+        {role: 'minimize', accelerator: "Cmd+M"},
+        {role: 'zoom'},
+        {type: 'separator'},
+        {role: 'front'}
+      ]
+    }
   ];
 
   Menu.setApplicationMenu(Menu.buildFromTemplate(template));

@@ -1,9 +1,9 @@
 {
-  "name"    : "Eighty",
-  "version" : "0.1.0",
-  "main"    : "main.js",
+  "name": "Eighty",
+  "version": "0.1.0",
+  "main": "main.js",
   "devDependencies": {
-    "electron": "^1.4.1"
+    "electron": "^5.0"
   },
   "scripts": {
     "start": "electron ."
