@@ -42,6 +42,7 @@ group :development, :test do
   gem "haml_lint"
   gem "letter_opener"
   gem "rubocop"
+  gem "rubocop-performance"
 end
 
 group :development do
