@@ -3,10 +3,52 @@
   "version": "0.1.0",
   "main": "main.js",
   "devDependencies": {
-    "electron": "^5.0"
+    "electron": "^5.0",
+    "electron-builder": "^20.40.2"
   },
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "./node_modules/.bin/electron-builder --dir",
+    "dist": "./node_modules/.bin/electron-builder"
   },
-  "repository": "https://github.com/npezza93/eighty"
+  "repository": "https://github.com/npezza93/eighty",
+  "build": {
+    "productName": "Eighty",
+    "mac": {
+      "extendInfo": {
+        "NSRequiresAquaSystemAppearance": false
+      },
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "dmg": {
+      "icon": "build/icon.icns",
+      "iconSize": 130,
+      "contents": [
+        {
+          "x": 110,
+          "y": 200,
+          "type": "file"
+        },
+        {
+          "x": 400,
+          "y": 200,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    }
+  }
 }
